@@ -1,0 +1,129 @@
+.sidebar {
+    grid-area: sidebar;
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.layout-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 22rem auto auto auto;
+    grid-template-rows: 8rem auto auto 8rem;
+    grid-template-areas:
+    "sidebar header header header"
+    "sidebar content content content"
+    "sidebar content content content"
+    "sidebar footer footer footer";
+}
+
+/*SIDEBAR START*/
+.sidebar {
+    overflow: auto;
+}
+
+.sidebar .logo {
+    margin: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo img {
+    height: 5rem;
+}
+
+.sidebar .menu-container {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar ul li {
+    list-style-type: none;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+a[aria-expanded='true'] i {
+    transition: .3s transform ease-in-out;
+    transform: rotate(90deg);
+}
+
+a[aria-expanded='false'] i {
+    transition: .3s transform ease-in-out;
+}
+
+.nav-item div[id^='submenu'] .sub-menu-container {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.sidebar .sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .sidebar-footer .social-media {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.sidebar .sidebar-footer .social-media a i[class^='fa'] {
+    color: #555;
+}
+
+/*SIDEBAR END*/
+
+/*HEADER START*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: lightgray;
+}
+
+.header .title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+/*HEADER END*/
+
+/*FOOTER START*/
+.footer {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .footer-container {
+    padding: 5rem;
+}
+
+.footer .developed {
+    border-bottom: 1px dotted;
+    padding-bottom: 0.5rem;
+}
+
+/*FOOTER END*/
