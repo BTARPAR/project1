@@ -1,0 +1,218 @@
+.sidebar {
+    grid-area: sidebar;
+}
+
+.header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.layout-container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 22rem auto auto auto;
+    grid-template-rows: 8rem auto auto 8rem;
+    grid-template-areas:
+    "sidebar header header header"
+    "sidebar content content content"
+    "sidebar content content content"
+    "sidebar footer footer footer";
+}
+
+/*SIDEBAR START*/
+.sidebar {
+    overflow: auto;
+    box-shadow: -5px 0 10px #bbbbbb;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar .logo {
+    margin: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .logo img {
+    height: 5rem;
+}
+
+.sidebar .menu-container {
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar ul li {
+    list-style-type: none;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+a[aria-expanded='true'] i {
+    transition: .3s transform ease-in-out;
+    transform: rotate(90deg);
+}
+
+a[aria-expanded='false'] i {
+    transition: .3s transform ease-in-out;
+}
+
+.nav-item div[id^='submenu'] .sub-menu-container {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.sidebar .sidebar-footer {
+    padding-left: 2.5rem;
+}
+
+.sidebar .sidebar-footer .social-media {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle i {
+    transition: all .5s ease;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    color: #555;
+    text-align: center;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle:hover {
+    background-color: #3B5998
+}
+
+.sidebar .sidebar-footer .social-media .social-handle:nth-child(2):hover {
+    background-color: #C8232C;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle:nth-child(3):hover {
+    background-color: #545454;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle:hover i:first-child {
+    margin-top: -2rem;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle:hover i:last-child {
+    color: #FFFFFF;
+}
+
+.sidebar .sidebar-footer .social-media .social-handle i {
+    display: block;
+}
+
+/*SIDEBAR END*/
+
+/*HEADER START*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: lightgray;
+}
+
+.header .title {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+/*HEADER END*/
+
+/*FOOTER START*/
+.footer {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer .footer-container {
+    padding: 0 5rem;
+}
+
+.footer .developed {
+    border-bottom: 1px dotted;
+    padding-bottom: 0.5rem;
+}
+
+/*FOOTER END*/
+
+/* media query */
+@media only screen and (max-width: 1000px) {
+    .layout-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: auto 5% 19%;
+        grid-template-rows: auto auto;
+        align-items: center;
+    }
+
+    .sidebar .sidebar-footer .social-media .social-handle {
+        margin-bottom: 0;
+    }
+
+    .dropdown-list {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .navbar-collapse .nav-item {
+        border-bottom: #e3e3e3 2px solid;
+        padding: 1rem;
+    }
+
+    .sidebar .logo img {
+        height: 7rem;
+    }
+
+    .navbar-toggler {
+        padding: 0;
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 845px) {
+    .sidebar .sidebar-footer  {
+        display: none;
+    }
+
+    .sidebar .logo img {
+        height: 3rem;
+    }
+}
