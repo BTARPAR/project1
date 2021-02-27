@@ -68,5 +68,5 @@
 }
 
 #flat .active, #flat2 .active {
-    border: 10px solid rgb(6, 172, 172);
+    border: 0.3rem solid rgb(6, 172, 172);
 }
