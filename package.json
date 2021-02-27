@@ -2,7 +2,7 @@
   "name": "project1",
   "version": "1.0.0",
   "description": "project1",
-  "main": "index.html",
+  "main": "homelife.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run lite",
